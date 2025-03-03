@@ -25,13 +25,10 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.centerOnScreen();
 
-        // Memuat file FXML
         Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
-
-        // Membuat scene dengan root dari FXML
+   
         Scene scene = new Scene(root);
 
-        // Mengatur stage (jendela utama)
         primaryStage.setScene(scene);
         primaryStage.setTitle("Masoem University");
         Image icon = new Image(getClass().getResourceAsStream("/assets/img/icon.png"));
@@ -40,16 +37,7 @@ public class Main extends Application {
         primaryStage.show();
     }
     
-//    public void changeScene(String fxmlFile) throws Exception {
-//    Parent newRoot = FXMLLoader.load(getClass().getResource(fxmlFile));
-//    
-//    double width = newRoot.prefWidth(-1);
-//    double height = newRoot.prefHeight(-1);
-//    
-//    primaryStage.getScene().setRoot(newRoot);
-//    primaryStage.setWidth(width);
-//    primaryStage.setHeight(height); 
-//    }
+
     
     public void changeScene(String fxmlFile) throws Exception {
     Parent newRoot = FXMLLoader.load(getClass().getResource(fxmlFile));
