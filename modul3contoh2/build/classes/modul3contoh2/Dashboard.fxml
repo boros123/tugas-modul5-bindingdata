@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modul3contoh2.DashboardController">
    <left>
       <AnchorPane prefHeight="768.0" prefWidth="300.0" style="-fx-background-color: #071952;" BorderPane.alignment="CENTER">
@@ -24,31 +23,41 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Hyperlink layoutX="68.0" layoutY="297.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 31px 8px 31px;" text="Dashboard" textFill="#1e1e1e">
+            <Hyperlink layoutX="67.0" layoutY="298.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 31px 8px 31px;" text="Dashboard" textFill="#1e1e1e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Hyperlink layoutX="66.0" layoutY="380.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 25px 8px 25px;" text="Peminjaman" textFill="#363636">
+            <Hyperlink layoutX="66.0" layoutY="360.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 25px 8px 25px;" text="Peminjaman" textFill="#363636">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Hyperlink layoutX="65.0" layoutY="461.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 16px 8px 16px;" text="Pengembalian" textFill="#363636">
+            <Hyperlink layoutX="65.0" layoutY="422.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 16px 8px 16px;" text="Pengembalian" textFill="#363636">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Hyperlink layoutX="66.0" layoutY="540.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 26px 8px 26px;" text="Pengecekan" textFill="#363636">
+            <Hyperlink layoutX="66.0" layoutY="483.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 26px 8px 26px;" text="Pengecekan" textFill="#363636">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Hyperlink layoutX="66.0" layoutY="619.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 17px 8px 17px;" text="Perpanjangan" textFill="#363636">
+            <Hyperlink layoutX="66.0" layoutY="544.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 17px 8px 17px;" text="Perpanjangan" textFill="#363636">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
+            <Hyperlink fx:id="linkmaster" layoutX="66.0" layoutY="606.0" onAction="#handleLink" prefHeight="48.0" prefWidth="167.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 17px 8px 17px;" text=" Master Data" textFill="#363636">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Hyperlink>
+            <Button fx:id="btnLogout" layoutX="68.0" layoutY="687.0" mnemonicParsing="false" onAction="#handleButtonLogoutAction" prefHeight="44.0" prefWidth="166.0" style="-fx-background-color: #efefef;" text="Logout">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </left>
@@ -60,11 +69,6 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Button fx:id="btnLogout" layoutX="596.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleButtonLogoutAction" style="-fx-background-color: #071952;" text="Logout" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Button>
             <Label layoutX="61.0" layoutY="118.0" text="Selamat Datang Admin" textFill="#010c6f">
                <font>
                   <Font name="System Bold" size="20.0" />
