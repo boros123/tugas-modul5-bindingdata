@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 22, 2025 at 08:24 AM
+-- Generation Time: Mar 22, 2025 at 10:54 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.2.18
 
@@ -46,7 +46,7 @@ CREATE TABLE `anggota` (
 
 INSERT INTO `anggota` (`id`, `id_kota`, `id_organisasi`, `nama`, `alamat`, `telpon`, `email`, `tanggal_daftar`, `jenis_kelamin`, `jenis`) VALUES
 (6, 5, 1, 'Nauval Qais Annabil', 'Komp. Manglayang ', '09349023424', 'nauval@gmail.com', '2025-02-22', 'W', 'Mahasiswa'),
-(7, 2, 1, 'Abidin', 'Babakan Pandan', '03294090234', 'bdin@gmail.com', '2025-03-22', 'P', 'Mahasiswa');
+(8, 2, 1, 'Dini Alpiani', 'Deket Ducil', '0834900234', 'dini@gmail.com', '2025-03-22', 'W', 'Mahasiswa');
 
 -- --------------------------------------------------------
 
@@ -70,7 +70,9 @@ INSERT INTO `kota` (`id`, `nama`) VALUES
 (4, 'KAB. BANDUNG TIMUR'),
 (5, 'KOTA KARAWANG'),
 (6, 'KAB KARAWANG'),
-(7, 'KOTA SUMEDANG');
+(7, 'KOTA SUMEDANG'),
+(9, 'KAB. BANTEN BARAT'),
+(10, 'KOTA BANTEN');
 
 -- --------------------------------------------------------
 
@@ -151,19 +153,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `kota`
 --
 ALTER TABLE `kota`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `organisasi`
 --
 ALTER TABLE `organisasi`
-  MODIFY `id` tinyint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` tinyint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
