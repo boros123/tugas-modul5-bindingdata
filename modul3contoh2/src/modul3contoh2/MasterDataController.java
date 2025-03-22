@@ -11,17 +11,22 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -29,6 +34,24 @@ import javafx.scene.control.cell.PropertyValueFactory;
  * @author Lenovo
  */
 public class MasterDataController implements Initializable {
+    
+    @FXML
+    private Hyperlink linkdash;
+
+    @FXML
+    private void handleLinkDash(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) linkdash.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
     
     @FXML
     private Button btnLogoutM;
@@ -40,7 +63,7 @@ public class MasterDataController implements Initializable {
         main.changeScene("Main.fxml");    
     }
     
-//    ambil data untuk anggota
+
       private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
@@ -175,10 +198,10 @@ private void loadDataOrganisasi() {
     
 }
 
-//orga
+// end organisasi crud
    
 
-//kota add
+//kota crud
     @FXML
     private Button btnAddK;
     
@@ -243,7 +266,7 @@ private void updateKota() {
     clearFields();
 }
 
-//kota
+
     @FXML
     private TableView<Kota> Tblkota;
     
@@ -276,7 +299,7 @@ KotaDAO.deleteKota(selectedKota.getNama());
         loadDataKota(); 
         clearFields();
     }
-
+//end kota crud
 
 
 //anggota
@@ -367,9 +390,9 @@ private void selectAnggota(Anggota anggota) {
         txtEmail.setText(anggota.getEmail());
         txtTelpon.setText(anggota.getTelpon());
         txtAlamat.setText(anggota.getAlamat());
-        tglDaftar.setValue(LocalDate.parse(anggota.getTanggal_daftar())); // Pastikan format sesuai dengan LocalDate
+        tglDaftar.setValue(LocalDate.parse(anggota.getTanggal_daftar())); 
 
-        // Mencari dan memilih kota berdasarkan id_kota
+       
         for (Kota kota : comboxKota.getItems()) {
             if (kota.getId().equals(anggota.getId_kota())) {
                 comboxKota.getSelectionModel().select(kota);
@@ -377,7 +400,7 @@ private void selectAnggota(Anggota anggota) {
             }
         }
 
-        // Mencari dan memilih organisasi berdasarkan id_organisasi
+      
         for (Organisasi organisasi : comboxOrg.getItems()) {
             if (organisasi.getId().equals(anggota.getId_organisasi())) {
                 comboxOrg.getSelectionModel().select(organisasi);
@@ -385,7 +408,7 @@ private void selectAnggota(Anggota anggota) {
             }
         }
 
-        // Pilih jenis kelamin berdasarkan ToggleGroup
+       
         if ("P".equalsIgnoreCase(anggota.getJenis_kelamin())) {
             jkP.setSelected(true);
         } else {
@@ -405,7 +428,7 @@ private void selectAnggota(Anggota anggota) {
 
    @FXML
 private void addAnggota() {  
-    // Mengambil nilai dari input form
+    
     Kota selectedKota = comboxKota.getValue();
     Organisasi selectedOrganisasi = comboxOrg.getValue();
     String nama = txtNamaAng.getText();
@@ -414,15 +437,15 @@ private void addAnggota() {
     String email = txtEmail.getText();
     LocalDate tanggalDaftar = tglDaftar.getValue();
     
-    // Memastikan radio button untuk Jenis Kelamin terpilih
+    
     RadioButton selectedJK = (RadioButton) JK.getSelectedToggle();
     String jenisKelamin = (selectedJK != null) ? selectedJK.getText() : "";
 
-    // Memastikan radio button untuk Jenis terpilih
+  
     RadioButton selectedJenis = (RadioButton) Jenis.getSelectedToggle();
     String jenis = (selectedJenis != null) ? selectedJenis.getText() : "";
 
-    // Validasi input
+  
     if (selectedKota == null || selectedOrganisasi == null || nama.isEmpty() || email.isEmpty() ||
         telpon.isEmpty() || alamat.isEmpty() || tanggalDaftar == null || 
         jenisKelamin.isEmpty() || jenis.isEmpty()) {
@@ -430,10 +453,10 @@ private void addAnggota() {
         return;
     }
 
-    // Membuat objek anggota baru
+   
     Anggota newAnggota = new Anggota(
-        selectedKota.getId(),  // Menggunakan ID kota terlebih dahulu
-        selectedOrganisasi.getId(), // Menggunakan ID organisasi
+        selectedKota.getId(),  
+        selectedOrganisasi.getId(), 
         nama,
         alamat,
         telpon,
@@ -443,10 +466,10 @@ private void addAnggota() {
         jenis
     );
 
-    // Menyimpan data ke database
+    
     AnggotaDAO.addAnggota(newAnggota);
 
-    // Memuat ulang data dan mengosongkan field input
+ 
     loadDataAnggota();
     clearFieldsA();
 }
@@ -454,14 +477,14 @@ private void addAnggota() {
 
 @FXML
 private void updateAnggota() {
-    // Pastikan ada anggota yang dipilih
+    
     Anggota selectedAnggota = Tblanggota.getSelectionModel().getSelectedItem();
     if (selectedAnggota == null) {
         showAlert("Selection Error", "Tidak ada anggota yang dipilih!");
         return;
     }
 
-    // Mengambil nilai dari input form
+ 
     Kota selectedKota = comboxKota.getValue();
     Organisasi selectedOrganisasi = comboxOrg.getValue();
     String nama = txtNamaAng.getText();
@@ -470,11 +493,11 @@ private void updateAnggota() {
     String email = txtEmail.getText();
     LocalDate tanggalDaftar = tglDaftar.getValue();
     
-    // Memastikan radio button untuk Jenis Kelamin terpilih
+   
     RadioButton selectedJK = (RadioButton) JK.getSelectedToggle();
     String jenisKelamin = (selectedJK != null) ? selectedJK.getText() : "";
 
-    // Memastikan radio button untuk Jenis terpilih
+   
     RadioButton selectedJenis = (RadioButton) Jenis.getSelectedToggle();
     String jenis = (selectedJenis != null) ? selectedJenis.getText() : "";
 
@@ -486,7 +509,6 @@ private void updateAnggota() {
         return;
     }
 
-    // Mengupdate data anggota
     selectedAnggota.setId_kota(selectedKota.getId());
     selectedAnggota.setId_organisasi(selectedOrganisasi.getId());
     selectedAnggota.setNama(nama);
@@ -496,11 +518,8 @@ private void updateAnggota() {
     selectedAnggota.setTanggal_daftar(tanggalDaftar.toString());
     selectedAnggota.setJenis_kelamin(jenisKelamin);
     selectedAnggota.setJenis(jenis);
-
-    // Simpan perubahan ke database
-    AnggotaDAO.updateAnggota(selectedAnggota);
-
-    // Reload data dan kosongkan field input
+    
+    AnggotaDAO.updateAnggota(selectedAnggota); 
     loadDataAnggota();
     clearFieldsA();
 }
@@ -519,7 +538,7 @@ private void deleteAnggota() {
     clearFieldsA();
 }
 
-    
+//    end anggota crud
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -548,7 +567,6 @@ private void deleteAnggota() {
     colJenis.setCellValueFactory(new PropertyValueFactory<>("jenis"));
     colOrganisasi.setCellValueFactory(new PropertyValueFactory<>("NamaOrganisasi"));
 
-    // Load data anggota ke tabel
     loadDataAnggota();
 
     Tblanggota.getSelectionModel().selectedItemProperty().addListener(

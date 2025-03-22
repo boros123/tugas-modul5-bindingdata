@@ -26,7 +26,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="Tblorganisasi" layoutX="8.0" layoutY="297.0" prefHeight="219.0" prefWidth="527.0">
+                        <TableView fx:id="Tblorganisasi" layoutX="8.0" layoutY="259.0" prefHeight="219.0" prefWidth="527.0">
                            <columns>
                               <TableColumn fx:id="colIdO" prefWidth="75.0" text="Id" />
                               <TableColumn fx:id="colNamaO" prefWidth="75.0" text="Nama" />
@@ -85,7 +85,7 @@
                         <Button fx:id="btnAddA" layoutX="239.0" layoutY="286.0" mnemonicParsing="false" onAction="#addAnggota" prefHeight="25.0" prefWidth="49.0" style="-fx-background-color: blue;" text="Add" textFill="WHITE" />
                         <Button fx:id="btnUpdateA" layoutX="107.0" layoutY="286.0" mnemonicParsing="false" onAction="#updateAnggota" style="-fx-background-color: yellow;" text="Update" />
                         <Button fx:id="btnDeleteA" layoutX="175.0" layoutY="286.0" mnemonicParsing="false" onAction="#deleteAnggota" style="-fx-background-color: red;" text="Delete" textFill="WHITE" />
-                        <TableView fx:id="Tblanggota" layoutX="7.0" layoutY="344.0" prefHeight="219.0" prefWidth="527.0">
+                        <TableView fx:id="Tblanggota" layoutX="7.0" layoutY="330.0" prefHeight="219.0" prefWidth="527.0">
                           <columns>
                             <TableColumn fx:id="colId" prefWidth="75.0" text="Id" />
                             <TableColumn fx:id="colNama" prefWidth="75.0" text="Nama" />
@@ -104,7 +104,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="Tblkota" layoutX="8.0" layoutY="338.0" prefHeight="219.0" prefWidth="527.0">
+                        <TableView fx:id="Tblkota" layoutX="8.0" layoutY="255.0" prefHeight="219.0" prefWidth="527.0">
                            <columns>
                               <TableColumn fx:id="colIdK" prefWidth="75.0" text="Id" />
                               <TableColumn fx:id="colNamaK" prefWidth="75.0" text="Nama" />
@@ -137,37 +137,37 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Hyperlink layoutX="67.0" layoutY="280.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 31px 8px 31px;" text="Dashboard">
+            <Hyperlink fx:id="linkdash" layoutX="67.0" layoutY="280.0" onAction="#handleLinkDash" prefHeight="10.0" prefWidth="167.0" style="-fx-background-color: #ffffff; -fx-padding: 5px 31px 5px 31px;" text="Dashboard" textFill="#1e1e1e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Hyperlink layoutX="67.0" layoutY="339.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 25px 8px 25px;" text="Peminjaman">
+            <Hyperlink layoutX="66.0" layoutY="329.0" style="-fx-background-color: #ffffff; -fx-padding: 5px 25px 5px 25px;" text="Peminjaman" textFill="#1e1e1e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Hyperlink layoutX="67.0" layoutY="397.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 16px 8px 16px;" text="Pengembalian">
+            <Hyperlink layoutX="66.0" layoutY="378.0" style="-fx-background-color: #ffffff; -fx-padding: 5px 16px 5px 16px;" text="Pengembalian" textFill="#1e1e1e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Hyperlink layoutX="67.0" layoutY="456.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 26px 8px 26px;" text="Pengecekan">
+            <Hyperlink layoutX="67.0" layoutY="427.0" style="-fx-background-color: #ffffff; -fx-padding: 5px 26px 5px 26px;" text="Pengecekan" textFill="#1e1e1e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Hyperlink layoutX="67.0" layoutY="514.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 17px 8px 17px;" text="Perpanjangan">
+            <Hyperlink layoutX="68.0" layoutY="476.0" style="-fx-background-color: #ffffff; -fx-padding: 5px 17px 5px 17px;" text="Perpanjangan" textFill="#1e1e1e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Hyperlink layoutX="67.0" layoutY="573.0" prefHeight="48.0" prefWidth="167.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 17px 8px 17px;" text=" Master Data">
+            <Hyperlink layoutX="67.0" layoutY="526.0" prefHeight="22.0" prefWidth="167.0" style="-fx-background-color: #ffffff; -fx-padding: 4px 17px 4px 17px;" text=" Master Data" textFill="#1e1e1e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Button fx:id="btnLogoutM" layoutX="69.0" layoutY="667.0" mnemonicParsing="false" onAction="#handleButtonLogoutAction" prefHeight="47.0" prefWidth="165.0" style="-fx-background-color: #efefef;" text="Logout">
+            <Button fx:id="btnLogoutM" layoutX="69.0" layoutY="609.0" mnemonicParsing="false" onAction="#handleButtonLogoutAction" prefHeight="47.0" prefWidth="165.0" style="-fx-background-color: #efefef;" text="Logout">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>

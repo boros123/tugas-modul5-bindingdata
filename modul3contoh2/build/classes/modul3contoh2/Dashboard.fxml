@@ -13,47 +13,47 @@
    <left>
       <AnchorPane prefHeight="768.0" prefWidth="300.0" style="-fx-background-color: #071952;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="71.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="162.0" fitWidth="159.0" layoutX="71.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/img/logo_white.png" />
                </image>
             </ImageView>
-            <Label layoutX="76.0" layoutY="220.0" text="PustakaLoka" textFill="WHITE">
+            <Label layoutX="76.0" layoutY="210.0" text="PustakaLoka" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Hyperlink layoutX="67.0" layoutY="298.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 31px 8px 31px;" text="Dashboard" textFill="#1e1e1e">
+            <Hyperlink fx:id="linkdash" layoutX="67.0" layoutY="281.0" style="-fx-background-color: #ffffff; -fx-padding: 6px 31px 6px 31px;" text="Dashboard" textFill="#1e1e1e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Hyperlink layoutX="66.0" layoutY="360.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 25px 8px 25px;" text="Peminjaman" textFill="#363636">
+            <Hyperlink layoutX="66.0" layoutY="332.0" style="-fx-background-color: #ffffff; -fx-padding: 6px 25px 6px 25px;" text="Peminjaman" textFill="#1e1e1e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Hyperlink layoutX="65.0" layoutY="422.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 16px 8px 16px;" text="Pengembalian" textFill="#363636">
+            <Hyperlink layoutX="66.0" layoutY="384.0" style="-fx-background-color: #ffffff; -fx-padding: 6px 16px 6px 16px;" text="Pengembalian" textFill="#1e1e1e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Hyperlink layoutX="66.0" layoutY="483.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 26px 8px 26px;" text="Pengecekan" textFill="#363636">
+            <Hyperlink layoutX="67.0" layoutY="435.0" style="-fx-background-color: #ffffff; -fx-padding: 6px 26px 6px 26px;" text="Pengecekan" textFill="#1e1e1e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Hyperlink layoutX="66.0" layoutY="544.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 17px 8px 17px;" text="Perpanjangan" textFill="#363636">
+            <Hyperlink layoutX="67.0" layoutY="487.0" style="-fx-background-color: #ffffff; -fx-padding: 6px 17px 6px 17px;" text="Perpanjangan" textFill="#1e1e1e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Hyperlink fx:id="linkmaster" layoutX="66.0" layoutY="606.0" onAction="#handleLink" prefHeight="48.0" prefWidth="167.0" style="-fx-background-color: #ffffff; -fx-padding: 8px 17px 8px 17px;" text=" Master Data" textFill="#363636">
+            <Hyperlink fx:id="linkmaster" layoutX="67.0" layoutY="539.0" onAction="#handleLink" prefHeight="36.0" prefWidth="167.0" style="-fx-background-color: #ffffff; -fx-padding: 6px 17px 6px 17px;" text=" Master Data" textFill="#1e1e1e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Hyperlink>
-            <Button fx:id="btnLogout" layoutX="68.0" layoutY="687.0" mnemonicParsing="false" onAction="#handleButtonLogoutAction" prefHeight="44.0" prefWidth="166.0" style="-fx-background-color: #efefef;" text="Logout">
+            <Button fx:id="btnLogout" layoutX="67.0" layoutY="639.0" mnemonicParsing="false" onAction="#handleButtonLogoutAction" prefHeight="44.0" prefWidth="166.0" style="-fx-background-color: #efefef;" text="Logout">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>

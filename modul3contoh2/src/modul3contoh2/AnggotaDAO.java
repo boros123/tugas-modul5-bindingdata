@@ -18,6 +18,7 @@ import javafx.collections.ObservableList;
  */
 public class AnggotaDAO {
 public static ObservableList<Anggota> getAnggota() {
+      // ObservableList untuk menyimpan data anggta
     ObservableList<Anggota> anggotaList = FXCollections.observableArrayList();
     String query = "SELECT anggota.*, kota.nama AS nama_kota, organisasi.nama AS nama_organisasi " +
                    "FROM anggota " +
@@ -43,7 +44,7 @@ public static ObservableList<Anggota> getAnggota() {
             String nama_kota = rs.getString("nama_kota");
             String nama_organisasi = rs.getString("nama_organisasi");
 
-            // Menambahkan ke dalam list
+       
             anggotaList.add(new Anggota(id, id_kota, id_organisasi, nama, alamat, telpon, email, 
                                         tanggal_daftar, jenis_kelamin, jenis, nama_kota, nama_organisasi));
         }
